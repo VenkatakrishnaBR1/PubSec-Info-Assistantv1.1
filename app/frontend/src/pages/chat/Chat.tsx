@@ -31,8 +31,8 @@ import React from "react";
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
     const [isInfoPanelOpen, setIsInfoPanelOpen] = useState(false);
-    const [retrieveCount, setRetrieveCount] = useState<number>(5);
-    const [useSuggestFollowupQuestions, setUseSuggestFollowupQuestions] = useState<boolean>(false);
+    const [retrieveCount, setRetrieveCount] = useState<number>(20);
+    const [useSuggestFollowupQuestions, setUseSuggestFollowupQuestions] = useState<boolean>(true);
     const [userPersona, setUserPersona] = useState<string>("analyst");
     const [systemPersona, setSystemPersona] = useState<string>("an Assistant");
     // Setting responseLength to 2048 by default, this will effect the default display of the ResponseLengthButtonGroup below.
@@ -240,7 +240,7 @@ const Chat = () => {
     useEffect(() => chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" }), [isLoading]);
 
     const onRetrieveCountChange = (_ev?: React.SyntheticEvent<HTMLElement, Event>, newValue?: string) => {
-        setRetrieveCount(parseInt(newValue || "5"));
+        setRetrieveCount(parseInt(newValue || "20"));
     };
 
     const onUserPersonaChange = (_ev?: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>, newValue?: string) => {
@@ -310,11 +310,14 @@ const Chat = () => {
                 </div>
             </div>
             <div className={styles.chatRoot}>
-                <div className={styles.chatContainer}>
+                <div className={styles.chatContainer}>                    
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             {activeChatMode == ChatMode.WorkOnly ? 
                                 <div>
+                                    <span className={styles.chatEmptyObjectives}>
+                                        <i>You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13). </i>
+                                    </span>
                                     <div className={styles.chatEmptyStateHeader}> 
                                         <BuildingMultipleFilled fontSize={"100px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work Data logo" />
                                         </div>
@@ -322,6 +325,9 @@ const Chat = () => {
                                 </div>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <div>
+                                    <span className={styles.chatEmptyObjectives}>
+                                        <i>You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13). </i>
+                                    </span>
                                     <div className={styles.chatEmptyStateHeader}> 
                                         <BuildingMultipleFilled fontSize={"80px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work and Web Data logo" /><AddFilled fontSize={"50px"} primaryFill={"rgba(0, 0, 0, 0.7)"} aria-hidden="true" aria-label=""/><GlobeFilled fontSize={"80px"} primaryFill={"rgba(24, 141, 69, 1)"} aria-hidden="true" aria-label="" />
                                     </div>
@@ -329,17 +335,23 @@ const Chat = () => {
                                 </div>
                             : //else Ungrounded
                                 <div>
+                                    <span className={styles.chatEmptyObjectives}>
+                                        <i>You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13). </i>
+                                    </span>
                                     <div className={styles.chatEmptyStateHeader}> 
                                         <ChatSparkleFilled fontSize={"80px"} primaryFill={"rgba(0, 0, 0, 0.35)"} aria-hidden="true" aria-label="Chat logo" />
                                     </div>
                                     <h1 className={styles.chatEmptyStateTitle}>Chat directly with a LLM</h1>
                                 </div>
                             }
+                            {true?null:(
                             <span className={styles.chatEmptyObjectives}>
                                 <i>Information Assistant uses AI. Check for mistakes.   </i><a href="https://github.com/microsoft/PubSec-Info-Assistant/blob/main/docs/transparency.md" target="_blank" rel="noopener noreferrer">Transparency Note</a>
-                            </span>
+                            </span>)
+                            }
+
                             {activeChatMode != ChatMode.Ungrounded &&
-                                <div>
+                                <div>                                    
                                     <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
@@ -409,7 +421,7 @@ const Chat = () => {
                         )}
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. Who are Microsoft's top executives, provided as a table?)"
+                            placeholder="Type a new question (e.g. Who are OCC's top executives, provided as a table?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question, defaultApproach, {}, {}, {})}
                             onAdjustClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)}
@@ -463,6 +475,7 @@ const Chat = () => {
                             onChange={onRetrieveCountChange}
                         />
                     }
+                    {true?null:<>(
                     {activeChatMode != ChatMode.Ungrounded &&
                         <Checkbox
                             className={styles.chatSettingsSeparator}
@@ -471,8 +484,13 @@ const Chat = () => {
                             onChange={onUseSuggestFollowupQuestionsChange}
                         />
                     }
+                    )</>}
+                    
+                    {true?null: <>(                    
                     <TextField className={styles.chatSettingsSeparator} defaultValue={userPersona} label="User Persona" onChange={onUserPersonaChange} />
                     <TextField className={styles.chatSettingsSeparator} defaultValue={systemPersona} label="System Persona" onChange={onSystemPersonaChange} />
+                    )</>}
+                               
                     <ResponseLengthButtonGroup className={styles.chatSettingsSeparator} onClick={onResponseLengthChange} defaultValue={responseLength} />
                     <ResponseTempButtonGroup className={styles.chatSettingsSeparator} onClick={onResponseTempChange} defaultValue={responseTemp} />
                     {activeChatMode != ChatMode.Ungrounded &&

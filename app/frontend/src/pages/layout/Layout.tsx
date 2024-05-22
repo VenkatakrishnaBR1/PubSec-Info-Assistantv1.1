@@ -33,10 +33,11 @@ export const Layout = () => {
                 <div className={styles.headerContainer}>
                     <div className={styles.headerTitleContainer}>
                         <img src={openai} alt="Azure OpenAI" className={styles.headerLogo} />
+                        <img src={openai} alt="Azure OpenAI" className={styles.headerLogo} />
                         <h3 className={styles.headerTitle}><Title /></h3>
                     </div>
                     <nav>
-                        <ul className={styles.headerNavList}>
+                       {true?null: ( <ul className={styles.headerNavList}>
                             <li>
                                 <NavLink to="/" className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}>
                                     Chat
@@ -67,7 +68,8 @@ export const Layout = () => {
                                       
                                 </li>
                             }
-                    </ul>
+                    </ul> )}
+                    
                     </nav>
                 </div>
             </header>

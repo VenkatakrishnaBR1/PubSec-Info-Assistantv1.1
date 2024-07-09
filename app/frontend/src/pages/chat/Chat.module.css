@@ -26,8 +26,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-
+    
 }
 
 .chat-overflow-hidden-body {
@@ -51,6 +50,16 @@
     align-items: center;
 }
 
+.chatEmptyStateHeadervalign {
+   /* display: flex;
+    align-items: center;*/
+        
+    vertical-align: top;    
+    width: 1024px;    
+    padding: 0px;
+}
+
+
 .chatEmptyStateTitle {
     display: contents;
     font-size: 3rem;
@@ -60,10 +69,12 @@
 }
 
 .chatEmptyObjectives {
-    padding-left: 160px;
+    /*padding-left: 160px;
     padding-right: 160px;
-    text-align: center;
-    font-size: 12px;
+    text-align: center;*/
+    font-size: 10px;
+    color:white;
+    width: 100px;
 }
 
 .chatEmptyObjectivesList {
@@ -87,9 +98,23 @@
     padding-left: 6px;
 }
 
-.chatEmptyStateSubtitle {
+@media only screen and (max-height:450px) {
+    .chatEmptyStateSubtitle {
+    display: none;
+    }
+    }
+
+.chatEmptyStateSubtitle {    
+    margin-bottom: 10px;    
+}
+
+.chatEmptyStateSubtitleC {
     font-weight: 600;
     margin-bottom: 10px;
+    align-items: center;
+    margin-top: 10em;    
+    text-align: center;
+    
 }
 
 @media only screen and (max-height: 780px) {
@@ -116,6 +141,11 @@
     max-height: calc(100vh - 313px); /* optional, adjust according to your layout */
 }
 
+.h2class{
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
 .chatMessageGpt {
     margin-bottom: 20px;
     max-width: 80%;
@@ -138,7 +168,31 @@
     padding-right: 24px;
     width: 100%;
     max-width: 1028px;
-    background: #f2f2f2;
+    /*background: #f2f2f2;
+    background:#a4a4a4 ;*/
+    background: transparent;
+        
+}
+
+.example {
+    word-break: break-word;    
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 5px;        
+    margin-top: 5px;
+    font-size: 12px;   
+    justify-content: center;
+    background-color:dimgray;
+    color:white;
+    /*position: absolute;*/
+    width: 65%;
+}
+
+.chatBackgroundGray {   
+    background-color:red ;          
+    color:#1B4AEF   
 }
 
 .chatAnalysisPanel {
@@ -211,4 +265,9 @@
     .chatInputWarningMessage {
         bottom: 8px;
     }
+}
+.example1 {
+    
+    display: flex;
+    justify-content: center;    
 }

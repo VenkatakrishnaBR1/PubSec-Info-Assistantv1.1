@@ -6,4 +6,11 @@
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    color: white;  
+}
+
+
+.text-white {
+    color: white;
+    background-color: white;
 }

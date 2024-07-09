@@ -13,15 +13,30 @@
     
 }
 .layout {
-    display: flex;
+    /*display: flex;
     flex-direction: column;
     height: 100%;
     background-color: #f2f2f2;
+    background-color:#a4a4a4 ;
+    height: 100%;
+    max-width: 1500px;
+    max-height: 1000px;
+    */
+    display: flex;    
+    flex-direction: column;
+    background-image: url("../chat/IABackground_Grey.png");   
+    align-content: center;
+    min-height: 800px;
+    
+    min-width: 1200px;
+    
+        
 }
 
 .header {
-    background-color: #222222;
-    color: #f2f2f2;
+   /* background-color: #222222;
+    color: #f2f2f2;*/
+    background-color: black;
 }
 
 .headerContainer {
@@ -30,18 +45,20 @@
     justify-content: space-around;
     margin-right: 12px;
     margin-left: 12px;
+    color: black;
 }
 
 .headerTitleContainer {
-    display: flex;
-    align-items: center;
+    align-items: center;           
+
+    /*display: flex;
     margin-right: 40px;
     color: #f2f2f2;
-    text-decoration: none;
+    text-decoration: none;*/
 }
 
 .headerLogo {
-    height: 40px;
+    height: 90px;
 }
 
 .headerTitle {

@@ -26,6 +26,8 @@ import { ChatModeButtonGroup } from "../../components/ChatModeButtonGroup";
 import { InfoContent } from "../../components/InfoContent/InfoContent";
 import { FolderPicker } from "../../components/FolderPicker";
 import { TagPickerInline } from "../../components/TagPicker";
+
+
 import React from "react";
 
 const Chat = () => {
@@ -68,6 +70,12 @@ const Chat = () => {
 
     const [selectedAnswer, setSelectedAnswer] = useState<number>(0);
     const [answers, setAnswers] = useState<[user: string, response: ChatResponse][]>([]);
+
+    const customPanelStyles = {
+        root: {
+          backgroundColor: '#a4a4a4', // Set your desired background color here
+        },
+      };
 
     async function fetchFeatureFlags() {
         try {
@@ -312,27 +320,45 @@ const Chat = () => {
             <div className={styles.chatRoot}>
                 <div className={styles.chatContainer}>                    
                     {!lastQuestionRef.current ? (
-                        <div className={styles.chatEmptyState}>
+                        <div className={styles.chatEmptyStateHeadervalign}>
                             {activeChatMode == ChatMode.WorkOnly ? 
-                                <div>
-                                    <span className={styles.chatEmptyObjectives}>
-                                        <i>You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13). </i>
-                                    </span>
-                                    <div className={styles.chatEmptyStateHeader}> 
-                                        <BuildingMultipleFilled fontSize={"100px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work Data logo" />
-                                        </div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>
+                                <><div className={styles.example1}> 
+                                    <div className={styles.example}>                                        
+                                        <span >
+                                            You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13).
+                                        </span>
+                                    </div>                                  
                                 </div>
-                            : activeChatMode == ChatMode.WorkPlusWeb ?
-                                <div>
-                                    <span className={styles.chatEmptyObjectives}>
-                                        <i>You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13). </i>
-                                    </span>
-                                    <div className={styles.chatEmptyStateHeader}> 
-                                        <BuildingMultipleFilled fontSize={"80px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Chat with your Work and Web Data logo" /><AddFilled fontSize={"50px"} primaryFill={"rgba(0, 0, 0, 0.7)"} aria-hidden="true" aria-label=""/><GlobeFilled fontSize={"80px"} primaryFill={"rgba(24, 141, 69, 1)"} aria-hidden="true" aria-label="" />
+                                    <div className={styles.example1}>                                     
+                                    <div> 
+                                        <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>                                        
+                                    </div>  
                                     </div>
-                                    <h1 className={styles.chatEmptyStateTitle}>Chat with your work and web data</h1>
+                                    <div className={styles.example1}>                                     
+                                    <div> 
+                                        <span>Information Assistant uses AI. Check for mistakes.</span>
+                                    </div>                                    
                                 </div>
+                                </>
+                            : activeChatMode == ChatMode.WorkPlusWeb ?
+                                <><div className={styles.example1}> 
+                                    <div className={styles.example}> 
+                                        <span >
+                                            You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13).
+                                        </span>
+                                       </div>
+                                    </div> 
+                                    <div className={styles.example1}>                                     
+                                    <div> 
+                                        <h1 className={styles.chatEmptyStateTitle}>Chat with your work and web data</h1>
+                                    </div>
+                                    </div>
+                                    <div className={styles.example1}>                                     
+                                    <div> 
+                                        <span>Information Assistant uses AI. Check for mistakes.</span>
+                                    </div>    
+                                </div>
+                                </>
                             : //else Ungrounded
                                 <div>
                                     <span className={styles.chatEmptyObjectives}>
@@ -350,9 +376,9 @@ const Chat = () => {
                             </span>)
                             }
 
-                            {activeChatMode != ChatMode.Ungrounded &&
-                                <div>                                    
-                                    <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
+                            {activeChatMode != ChatMode.Ungrounded &&                                 
+                                <div className={styles.chatEmptyStateSubtitle}>                                                                       
+                                    <span className={styles.h2class}>Ask anything or try an example</span>                                    
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
                             }
@@ -413,9 +439,9 @@ const Chat = () => {
                         {activeChatMode == ChatMode.WorkPlusWeb && (
                             <div className={styles.chatInputWarningMessage}> 
                                 {defaultApproach == Approaches.ReadRetrieveRead && 
-                                    <div>Questions will be answered by default from Work <BuildingMultipleFilled fontSize={"20px"} primaryFill={"rgba(27, 74, 239, 1)"} aria-hidden="true" aria-label="Work Data" /></div>}
+                                    <div>Questions will be answered by default from Work </div>}
                                 {defaultApproach == Approaches.ChatWebRetrieveRead && 
-                                    <div>Questions will be answered by default from Web <GlobeFilled fontSize={"20px"} primaryFill={"rgba(24, 141, 69, 1)"} aria-hidden="true" aria-label="Web Data" /></div>
+                                    <div>Questions will be answered by default from Web </div>
                                 }
                             </div> 
                         )}
@@ -445,8 +471,8 @@ const Chat = () => {
                         activeTab={activeAnalysisPanelTab}
                     />
                 )}
-
-                <Panel
+                <div className={styles.chatBackgroundGray}>
+                <Panel                    
                     headerText="Configure answer generation"
                     isOpen={isConfigPanelOpen}
                     isBlocking={false}
@@ -501,8 +527,10 @@ const Chat = () => {
                         </div>
                     }
                 </Panel>
-
-                <Panel
+                </div>
+                
+                <div>
+                <Panel                   
                     headerText="Information"
                     isOpen={isInfoPanelOpen}
                     isBlocking={false}
@@ -510,10 +538,11 @@ const Chat = () => {
                     closeButtonAriaLabel="Close"
                     onRenderFooterContent={() => <DefaultButton onClick={() => setIsInfoPanelOpen(false)}>Close</DefaultButton>}
                     isFooterAtBottom={true}                >
-                    <div className={styles.resultspanel}>
+                    <div>
                         <InfoContent />
-                    </div>
+                    </div>                    
                 </Panel>
+                </div>
             </div>
         </div>
     );

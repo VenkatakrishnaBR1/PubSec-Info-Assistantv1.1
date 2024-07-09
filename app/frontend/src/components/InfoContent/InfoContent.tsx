@@ -12,8 +12,16 @@ interface Props {
     className?: string;
 }
 
+
+
 export const InfoContent = ({ className }: Props) => {
     const [infoData, setInfoData] = useState<GetInfoResponse | null>(null);
+
+    const customDivStyle = {
+        root: {
+          backgroundColor: '#a4a4a4', // Set your desired background color here      
+        },
+      };
 
     async function fetchInfoData() {
         console.log("InfoContent 1");

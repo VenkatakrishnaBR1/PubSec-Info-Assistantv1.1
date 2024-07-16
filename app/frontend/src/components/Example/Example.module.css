@@ -14,7 +14,9 @@
 
 .example {
     word-break: break-word;
-    background: #dbdbdb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #5e7aac;
     border-radius: 8px;
     display: flex;
     flex-direction: column;

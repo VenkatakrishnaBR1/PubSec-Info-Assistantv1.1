@@ -11,11 +11,6 @@ export default defineConfig({
         sourcemap: true
     },
     server: {
-        host: '127.0.0.1',
-        watch: {
-          usePolling: true,
-          interval: 100, // Poll every 100ms
-        },
         proxy: {
             "/ask": "http://localhost:5000",
             "/chat": "http://localhost:5000"

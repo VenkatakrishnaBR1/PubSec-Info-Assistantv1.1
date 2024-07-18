@@ -445,7 +445,7 @@ const Chat = () => {
                                 }
                             </div> 
                         )}
-                        <QuestionInput
+                        <QuestionInput 
                             clearOnSend
                             placeholder="Type a new question (e.g. Who are OCC's top executives, provided as a table?)"
                             disabled={isLoading}

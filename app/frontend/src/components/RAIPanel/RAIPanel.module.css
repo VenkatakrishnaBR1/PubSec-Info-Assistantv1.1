@@ -4,6 +4,7 @@
 .adjustInputContainer {
     display: flex;
     flex-direction: row;
+    background-color: #5e7aac;
 }
 .adjustInput {
     padding: 6px;

@@ -82,7 +82,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, onAd
                     </div>
                 )
                 : null}
-                <TextField style={{ backgroundColor: "darkgray"}}
+                <TextField style={{ backgroundColor: "lightgray"}}
                     className={styles.questionInputTextArea}
                     placeholder={placeholder}
                     multiline

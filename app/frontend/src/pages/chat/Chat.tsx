@@ -73,6 +73,7 @@ const Chat = () => {
 
     const customPanelStyles = {
         root: {
+          backgroundSize: 'cover',
           backgroundColor: '#a4a4a4', // Set your desired background color here
         },
       };

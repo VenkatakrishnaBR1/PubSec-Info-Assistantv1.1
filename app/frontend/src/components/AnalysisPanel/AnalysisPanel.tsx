@@ -26,7 +26,8 @@ interface Props {
     answer: ChatResponse;
 }
 
-const pivotItemDisabledStyle = { disabled: true, style: { color: "grey" } };
+const pivotItemDisabledStyle = { disabled: true, style: { color: "grey", background: "white" } };
+const pivotItemEnabledStyle = { disabled: false, style: { color: "black", background: "white" } };
 
 export const AnalysisPanel = ({ answer, activeTab, activeCitation, sourceFile, pageNumber, citationHeight, className, onActiveTabChanged }: Props) => {
     const [activeCitationObj, setActiveCitationObj] = useState<ActiveCitation>();
@@ -97,21 +98,21 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, sourceFile, p
             <PivotItem
                 itemKey={AnalysisPanelTabs.ThoughtProcessTab}
                 headerText="Thought process"
-                headerButtonProps={isDisabledThoughtProcessTab ? pivotItemDisabledStyle : undefined}
+                headerButtonProps={isDisabledThoughtProcessTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
             >
                 <div className={styles.thoughtProcess} dangerouslySetInnerHTML={{ __html: sanitizedThoughts }}></div>
             </PivotItem>
             <PivotItem
                 itemKey={AnalysisPanelTabs.SupportingContentTab}
                 headerText="Supporting content"
-                headerButtonProps={isDisabledSupportingContentTab ? pivotItemDisabledStyle : undefined}
+                headerButtonProps={isDisabledSupportingContentTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
             >
                 <SupportingContent supportingContent={answer.data_points} />
             </PivotItem>
             <PivotItem
                 itemKey={AnalysisPanelTabs.CitationTab}
                 headerText="Citation"
-                headerButtonProps={isDisabledCitationTab ? pivotItemDisabledStyle : undefined}
+                headerButtonProps={isDisabledCitationTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
             >
                 <Pivot className={className}>
                     <PivotItem itemKey="indexedFile" headerText="Document Section">

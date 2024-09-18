@@ -321,25 +321,20 @@ const Chat = () => {
             <div className={styles.chatRoot}>
                 <div className={styles.chatContainer}>                    
                     {!lastQuestionRef.current ? (
-                        <div className={styles.chatEmptyStateHeadervalign}>
+                        <div style={{backgroundColor: 'white' }} className={styles.chatEmptyStateHeadervalign}>
                             {activeChatMode == ChatMode.WorkOnly ? 
-                                <><div className={styles.example1}> 
-                                    <div className={styles.example}>                                        
-                                        <span >
-                                            You are accessing a system providing Generative artificial intelligence (AI) capabilities. You must not enter, upload, or otherwise transmit OCC non-public information, including financial supervision information, to this service. All use of this service via OCC-issued devices is subject to OCC policy, including Secure Use of OCC Information Resources PPM-4300-2 and Proper Handling of Controlled Unclassified Information PPM-4120-2 , which describe employee responsibilities to protect OCC systems and information, as well as applicable whistleblower protections under 5 U.S.C. 2302(b)(13).
-                                        </span>
-                                    </div>                                  
-                                </div>
+                                <>
                                     <div className={styles.example1}>                                     
-                                    <div> 
-                                        <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>                                        
-                                    </div>  
+                                        <div> 
+                                            <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>                                        
+                                        </div>  
                                     </div>
                                     <div className={styles.example1}>                                     
-                                    <div> 
-                                        <span>Information Assistant uses AI. Check for mistakes.</span>
-                                    </div>                                    
-                                </div>
+                                        <div style={{ textAlign: 'center' }}> 
+                                            <span>Need to find something from the Examiner's Library or OCCCnet?.<br/>
+                                            Try this next generation of AI-assisted search.</span>
+                                        </div>                                    
+                                   </div>
                                 </>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <><div className={styles.example1}> 

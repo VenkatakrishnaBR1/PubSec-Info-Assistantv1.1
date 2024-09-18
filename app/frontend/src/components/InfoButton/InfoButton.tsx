@@ -14,7 +14,7 @@ export const InfoButton = ({ className, onClick }: Props) => {
     return (
         <div className={`${styles.container} ${className ?? ""}`} onClick={onClick}>
             <Info24Regular />
-            <Text className="text-white">{"Info"}</Text>
+            <Text className="text-white">{"Help"}</Text>
         </div>
     );
 };

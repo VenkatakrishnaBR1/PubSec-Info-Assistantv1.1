@@ -82,7 +82,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, onAd
                     </div>
                 )
                 : null}
-                <TextField style={{ backgroundColor: "lightgray"}}
+                <TextField style={{ backgroundColor: "white"}}
                     className={styles.questionInputTextArea}
                     placeholder={placeholder}
                     multiline
@@ -104,8 +104,9 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, onAd
             </Stack>
             </Stack.Item>
             <Stack.Item align="center">
-                <RAIPanel onAdjustClick={onAdjustClick} onRegenerateClick={onRegenerateClick} />
+                <RAIPanel onClearClick={onClearClick} onAdjustClick={onAdjustClick} onRegenerateClick={onRegenerateClick} />
             </Stack.Item>
+
         </Stack>
     );
 };

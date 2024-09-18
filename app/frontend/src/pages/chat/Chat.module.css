@@ -12,7 +12,8 @@
 .subHeader {
     display: flex;
     flex-direction: row;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
+    margin-left: 6em;
     /*justify-content: space-between;*/
 }
 
@@ -55,8 +56,10 @@
     align-items: center;*/
         
     vertical-align: top;    
-    width: 1024px;    
-    padding: 0px;
+    width: 80%;    
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px
 }
 
 
@@ -64,7 +67,7 @@
     display: contents;
     font-size: 3rem;
     font-weight: 500;
-    margin-top: 0;
+    margin-top: 10;
     margin-bottom: 10px;
 }
 
@@ -106,15 +109,18 @@
     }
 
 .chatEmptyStateSubtitle {    
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
+    align-items: left;
+    color:#5e7aac;;
+    margin-top: 1em;
+    margin-left: 0.5em;
 }
 
 .chatEmptyStateSubtitleC {
     font-weight: 600;
     margin-bottom: 10px;
-    align-items: center;
+    align-items: left;
     margin-top: 10em;    
-    text-align: center;
     
 }
 

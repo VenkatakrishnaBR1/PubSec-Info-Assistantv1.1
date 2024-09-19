@@ -311,10 +311,14 @@ const Chat = () => {
     return (
         <div className={styles.container}>
             <div className={styles.subHeader}>
-                <ChatModeButtonGroup className="" defaultValue={activeChatMode} onClick={onChatModeChange} featureFlags={featureFlags} /> 
+                 {/*  
+                <ChatModeButtonGroup className="" defaultValue={activeChatMode} onClick={onChatModeChange} featureFlags={featureFlags} />
+                */}
                 <div className={styles.commandsContainer}>
+                    {/*
                     <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
                     <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
+                    */}
                     <InfoButton className={styles.commandButton} onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)} />
                 </div>
             </div>
@@ -335,6 +339,7 @@ const Chat = () => {
                                             Try this next generation of AI-assisted search.</span>
                                         </div>                                    
                                    </div>
+                                   
                                 </>
                             : activeChatMode == ChatMode.WorkPlusWeb ?
                                 <><div className={styles.example1}> 
@@ -378,6 +383,7 @@ const Chat = () => {
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
                             }
+                            
                         </div>
                     ) : (
                         <div className={styles.chatMessageStream}>
@@ -406,6 +412,7 @@ const Chat = () => {
                                             chatMode={activeChatMode}
                                         />
                                     </div>
+                                    
                                 </div>
                             ))}
                             {isLoading && (
@@ -453,6 +460,14 @@ const Chat = () => {
                             onRegenerateClick={() => makeApiRequest(lastQuestionRef.current, defaultApproach, {}, {}, {})}
                         />
                     </div>
+                    <div className={styles.example1}>                                     
+                        <div style={{ textAlign: 'left', fontSize: 14, width: '50%', backgroundColor: 'lightgrey', padding: '1em', borderRadius: '5px' }}> 
+                            <span>
+                                OCCInfoAssist is a generative artifcal intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
+                            </span>
+                        </div>                                    
+                    </div>
+
                 </div>
 
                 {answers.length > 0 && activeAnalysisPanelTab && (

@@ -64,9 +64,11 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, onAd
     }
 
     return (
-        <Stack>
-            <Stack.Item>
+        <Stack horizontalAlign="stretch" styles={{ root: { width: '100%' } }}>
+            <Stack.Item styles={{ root: { width: '100%' } }}>
             <Stack horizontal className={styles.questionInputContainer}>
+                 {/* 
+
                 {showClearChat ? (
                     <div className={styles.questionClearButtonsContainer}>
                         <div
@@ -82,6 +84,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, onAd
                     </div>
                 )
                 : null}
+                 */}
                 <TextField style={{ backgroundColor: "white"}}
                     className={styles.questionInputTextArea}
                     placeholder={placeholder}

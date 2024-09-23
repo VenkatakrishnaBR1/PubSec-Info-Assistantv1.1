@@ -110,10 +110,10 @@
 
 .chatEmptyStateSubtitle {    
     margin-bottom: 10px;
-    align-items: left;
     color:#5e7aac;;
     margin-top: 1em;
-    margin-left: 0.5em;
+    margin-left: 4em;
+    align-content: center;
 }
 
 .chatEmptyStateSubtitleC {
@@ -151,6 +151,7 @@
 .h2class{
     font-size: 1.5em;
     margin-bottom: 1em;
+    margin-left: 20%;
 }
 
 .chatMessageGpt {
@@ -163,6 +164,11 @@
 .chatMessageGptMinWidth {
     max-width: 500px;
     margin-bottom: 20px;
+}
+
+.chatAskAnything {
+    align-content: center;
+    align-items: center;
 }
 
 .chatInput {

@@ -2,19 +2,19 @@
 // Licensed under the MIT license.
 
 import { Text } from "@fluentui/react";
-import { Info24Regular } from "@fluentui/react-icons";
-import styles from "./InfoButton.module.css";
+import { ChatHelp24Regular, Info24Regular } from "@fluentui/react-icons";
+import styles from "./HelpButton.module.css";
 
 interface Props {
     className?: string;
     onClick: () => void;
 }
 
-export const InfoButton = ({ className, onClick }: Props) => {
+export const HelpButton = ({ className, onClick }: Props) => {
     return (
         <div className={`${styles.container} ${className ?? ""}`} onClick={onClick}>
-            <Info24Regular />
-            <Text className="text-black">{" "}</Text>
+            <ChatHelp24Regular />
+            <Text className="text-white">{"Help"}</Text>
         </div>
     );
 };

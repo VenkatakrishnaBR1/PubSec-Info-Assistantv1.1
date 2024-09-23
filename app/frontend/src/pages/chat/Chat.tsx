@@ -19,6 +19,7 @@ import { UserChatMessage } from "../../components/UserChatMessage";
 import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel";
 import { SettingsButton } from "../../components/SettingsButton";
 import { InfoButton } from "../../components/InfoButton";
+import { HelpButton } from "../../components/HelpButton";
 import { ClearChatButton } from "../../components/ClearChatButton";
 import { ResponseLengthButtonGroup } from "../../components/ResponseLengthButtonGroup";
 import { ResponseTempButtonGroup } from "../../components/ResponseTempButtonGroup";
@@ -311,15 +312,8 @@ const Chat = () => {
     return (
         <div className={styles.container}>
             <div className={styles.subHeader}>
-                 {/*  
-                <ChatModeButtonGroup className="" defaultValue={activeChatMode} onClick={onChatModeChange} featureFlags={featureFlags} />
-                */}
                 <div className={styles.commandsContainer}>
-                    {/*
-                    <ClearChatButton className={styles.commandButton} onClick={clearChat} disabled={!lastQuestionRef.current || isLoading} />
-                    <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
-                    */}
-                    <InfoButton className={styles.commandButton} onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)} />
+                    <HelpButton className={styles.commandButton} onClick={() => window.open('/help.html', '_blank')} />
                 </div>
             </div>
             <div className={styles.chatRoot}>
@@ -378,8 +372,10 @@ const Chat = () => {
                             }
 
                             {activeChatMode != ChatMode.Ungrounded &&                                 
-                                <div className={styles.chatEmptyStateSubtitle}>                                                                       
-                                    <span className={styles.h2class}>Ask anything or try an example</span>                                    
+                                <div className={styles.chatEmptyStateSubtitle}>     
+                                    <div className={styles.chatAskAnything}>                                                                
+                                    <span className={styles.h2class}>Ask anything or try an example</span>
+                                    </div>                                    
                                     <ExampleList onExampleClicked={onExampleClicked} />
                                 </div>
                             }
@@ -460,12 +456,15 @@ const Chat = () => {
                             onRegenerateClick={() => makeApiRequest(lastQuestionRef.current, defaultApproach, {}, {}, {})}
                         />
                     </div>
-                    <div className={styles.example1}>                                     
+                    <div className={styles.example1} style={{ position: 'relative', width: '100%' }}>                               
                         <div style={{ textAlign: 'left', fontSize: 14, width: '50%', backgroundColor: 'lightgrey', padding: '1em', borderRadius: '5px' }}> 
                             <span>
                                 OCCInfoAssist is a generative artifcal intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
                             </span>
-                        </div>                                    
+                        </div>
+                        <div  style={{ position: 'absolute', bottom: '0', right: '0' }}>
+                            <InfoButton className={styles.commandButton} onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)} />
+                        </div>
                     </div>
 
                 </div>

@@ -78,6 +78,25 @@ const Chat = () => {
           backgroundColor: '#a4a4a4', // Set your desired background color here
         },
       };
+      const [isHover, setIsHover] = useState(false);
+      const boxStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        fontSize: '15px',
+        cursor: 'pointer',
+        content: 'FoofFoo',
+        backgroundColor: isHover ? 'lightblue' : 'transparent',
+        color: isHover ? 'red' : 'green',        
+     };  
+
+
+     const handleMouseEnter = () => {
+        setIsHover(true);
+     };
+     const handleMouseLeave = () => {
+        setIsHover(false);
+     };
 
     async function fetchFeatureFlags() {
         try {
@@ -312,9 +331,13 @@ const Chat = () => {
     return (
         <div className={styles.container}>
             <div className={styles.subHeader}>
-                <div className={styles.commandsContainer}>
+                <div>
+         <div >
+            <div className={styles.commandsContainer}>
                     <HelpButton className={styles.commandButton} onClick={() => window.open('/help.html', '_blank')} />
                 </div>
+         </div>
+      </div>
             </div>
             <div className={styles.chatRoot}>
                 <div className={styles.chatContainer}>                    

@@ -462,7 +462,7 @@ const Chat = () => {
                                 OCCInfoAssist is a generative artifcal intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
                             </span>
                         </div>
-                        <div  style={{ position: 'absolute', bottom: '0', right: '0' }}>
+                        <div  style={{ position: 'absolute', bottom: '0', right: '20px' }}>
                             <InfoButton className={styles.commandButton} onClick={() => setIsInfoPanelOpen(!isInfoPanelOpen)} />
                         </div>
                     </div>

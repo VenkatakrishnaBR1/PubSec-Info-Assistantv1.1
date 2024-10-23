@@ -334,7 +334,7 @@ const Chat = () => {
                 <div>
          <div >
             <div className={styles.commandsContainer}>
-                    <HelpButton className={styles.commandButton} onClick={() => window.open('/help.html', '_blank')} />
+                    <HelpButton className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/EcxRGjh7Rt1BlO2SGKpDWNgBDeY0pgJymRLzk89hEIpkIQ?e=yQLE7X', '_blank')} />
                 </div>
          </div>
       </div>
@@ -482,7 +482,7 @@ const Chat = () => {
                     <div className={styles.example1} style={{ position: 'relative', width: '100%' }}>                               
                         <div style={{ textAlign: 'left', fontSize: 14, width: '50%', backgroundColor: 'lightgrey', padding: '1em', borderRadius: '5px' }}> 
                             <span>
-                                OCCInfoAssist is a generative artifcal intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
+                                OCCInfoAssist is a generative Artifical intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
                             </span>
                         </div>
                         <div  style={{ position: 'absolute', bottom: '0', right: '20px' }}>

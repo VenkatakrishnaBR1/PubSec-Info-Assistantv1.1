@@ -123,7 +123,7 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, sourceFile, p
                         {activeCitationObj === undefined ? (
                             <Text>Loading...</Text>
                         ) : (
-                            <div>
+                            <div className={styles.thoughtProcess}>
                                 <Separator>Metadata</Separator>
                                 <Label>File Name</Label><Text>{activeCitationObj.file_name}</Text>
                                 <Label>File URI</Label><Text>{activeCitationObj.file_uri}</Text>

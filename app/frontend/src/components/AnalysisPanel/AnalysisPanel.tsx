@@ -115,7 +115,11 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, sourceFile, p
                 headerButtonProps={isDisabledCitationTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
             >
                 <Pivot className={className}>
-                    <PivotItem itemKey="indexedFile" headerText="Document Section">
+                    <PivotItem 
+                            itemKey="indexedFile" 
+                            headerText="Document Section"
+                            headerButtonProps={isDisabledSupportingContentTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
+                    >
                         {activeCitationObj === undefined ? (
                             <Text>Loading...</Text>
                         ) : (
@@ -132,7 +136,11 @@ export const AnalysisPanel = ({ answer, activeTab, activeCitation, sourceFile, p
                             </div>
                         )}
                     </PivotItem>
-                    <PivotItem itemKey="rawFile" headerText="Document">
+                    <PivotItem 
+                        itemKey="rawFile" 
+                        headerText="Document"
+                        headerButtonProps={isDisabledSupportingContentTab ? pivotItemDisabledStyle : pivotItemEnabledStyle}
+                    >
                         {["docx", "xlsx", "pptx"].includes(sourceFileExt) ? (
                             // Treat other Office formats like "xlsx" for the Office Online Viewer
                             <iframe title="Source File" src={'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(sourceFile as string) + "&action=embedview&wdStartOn=" + pageNumber} width="100%" height={citationHeight} />

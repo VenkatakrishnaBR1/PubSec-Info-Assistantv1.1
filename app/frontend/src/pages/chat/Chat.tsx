@@ -352,7 +352,7 @@ const Chat = () => {
                                     </div>
                                     <div className={styles.example1}>                                     
                                         <div style={{ textAlign: 'center' }}> 
-                                            <span>Need to find something from the Examiner's Library or OCCCnet?.<br/>
+                                            <span>Need to find something from the Examiner's Library or OCCCnet?<br/>
                                             Try this next generation of AI-assisted search.</span>
                                         </div>                                    
                                    </div>
@@ -482,7 +482,7 @@ const Chat = () => {
                     <div className={styles.example1} style={{ position: 'relative', width: '100%' }}>                               
                         <div style={{ textAlign: 'left', fontSize: 14, width: '50%', backgroundColor: 'lightgrey', padding: '1em', borderRadius: '5px' }}> 
                             <span>
-                                OCCInfoAssist is a generative Artifical intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
+                                OCCInfoAssist is a generative Artifical Intelligence (AI) service. You are accountable for ensuring the accuracy and integrity of all AI-generated products from this service that you integrate or introduce into your OCC tasks and work products, in alignment with applicable agency-wide or organizational unit standards.
                             </span>
                         </div>
                         <div  style={{ position: 'absolute', bottom: '0', right: '20px' }}>

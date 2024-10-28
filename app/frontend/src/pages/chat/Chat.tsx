@@ -20,6 +20,7 @@ import { AnalysisPanel, AnalysisPanelTabs } from "../../components/AnalysisPanel
 import { SettingsButton } from "../../components/SettingsButton";
 import { InfoButton } from "../../components/InfoButton";
 import { HelpButton } from "../../components/HelpButton";
+import { HelpButtonOCCdata } from "../../components/HelpButtonOCCdata";
 import { ClearChatButton } from "../../components/ClearChatButton";
 import { ResponseLengthButtonGroup } from "../../components/ResponseLengthButtonGroup";
 import { ResponseTempButtonGroup } from "../../components/ResponseTempButtonGroup";
@@ -334,8 +335,11 @@ const Chat = () => {
                 <div>
          <div >
             <div className={styles.commandsContainer}>
-                    <HelpButton className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/EcxRGjh7Rt1BlO2SGKpDWNgBDeY0pgJymRLzk89hEIpkIQ?e=yQLE7X', '_blank')} />
-                </div>
+                    <HelpButton className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/EcxRGjh7Rt1BlO2SGKpDWNgBDeY0pgJymRLzk89hEIpkIQ?e=yQLE7X', '_blank')} />                    
+                    <HelpButtonOCCdata className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/ES_ntOtLP45HsIN7yLX5544B20cbgte_KTZr01LfG5bnWg?e=bXCCbZ', '_blank')} />                    
+                    
+            </div>
+            
          </div>
       </div>
             </div>
@@ -352,7 +356,7 @@ const Chat = () => {
                                     </div>
                                     <div className={styles.example1}>                                     
                                         <div style={{ textAlign: 'center' }}> 
-                                            <span>Need to find something from the Examiner's Library or OCCCnet?<br/>
+                                            <span>Need to find something from the Examiner's Library or OCCnet?<br/>
                                             Try this next generation of AI-assisted search.</span>
                                         </div>                                    
                                    </div>

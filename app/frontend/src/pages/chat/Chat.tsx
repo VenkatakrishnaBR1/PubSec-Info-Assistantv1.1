@@ -43,6 +43,7 @@ const Chat = () => {
     // It must match a valid value of one of the buttons in the ResponseLengthButtonGroup.tsx file. 
     // If you update the default value here, you must also update the default value in the onResponseLengthChange method.
     const [responseLength, setResponseLength] = useState<number>(2048);
+    
 
     // Setting responseTemp to 0.6 by default, this will effect the default display of the ResponseTempButtonGroup below.
     // It must match a valid value of one of the buttons in the ResponseTempButtonGroup.tsx file.
@@ -335,9 +336,8 @@ const Chat = () => {
                 <div>
          <div >
             <div className={styles.commandsContainer}>
-                    <HelpButton className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/EcxRGjh7Rt1BlO2SGKpDWNgBDeY0pgJymRLzk89hEIpkIQ?e=yQLE7X', '_blank')} />                    
-                    <HelpButtonOCCdata className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:w:/s/CIO/SLAB/ES_ntOtLP45HsIN7yLX5544B20cbgte_KTZr01LfG5bnWg?e=bXCCbZ', '_blank')} />                    
-                    
+                <HelpButton className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:b:/s/CIO/SLAB/EbJNVY1PMFVEkK_u4sV2Y-4BYQtq04fnsFM1JXlUp2zNKA?e=lpmr0B', '_blank')} />                    
+                <HelpButtonOCCdata className={styles.commandButton} onClick={() => window.open('https://occtreasgovprod.sharepoint.com/:b:/s/CIO/SLAB/EQffAwWkJU5Dt9CT-VQCEnUBaL8GwJrqY3DOzB6ezgzw9w?e=OdK4Ez', '_blank')} />                                        
             </div>
             
          </div>

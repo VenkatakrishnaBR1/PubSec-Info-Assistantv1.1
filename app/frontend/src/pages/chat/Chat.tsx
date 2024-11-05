@@ -351,13 +351,13 @@ const Chat = () => {
                                 <>
                                     <div className={styles.example1}>                                     
                                         <div> 
-                                            <h1 className={styles.chatEmptyStateTitle}>Chat with your work data</h1>                                        
+                                            <h1 className={styles.chatEmptyStateTitle}>Search and Summarize OCC data</h1>                                        
                                         </div>  
                                     </div>
                                     <div className={styles.example1}>                                     
                                         <div style={{ textAlign: 'center' }}> 
-                                            <span>Need to find something from the Examiner's Library or OCCnet?<br/>
-                                            Try this next generation of AI-assisted search.</span>
+                                            <span>Need to find information from the Examiner's Library or OCCnet?<br/>
+                                                  Try this next-generation AI-assisted search.</span>
                                         </div>                                    
                                    </div>
                                    
